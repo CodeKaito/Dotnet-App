@@ -58,4 +58,89 @@ Before you get started, you will need the following:
 3. Select `Debug` > `Start Without Debugging` to build and run your application.
 4. Once the application is running, open your web browser and navigate to `http://localhost:5000` to view your deployed application.
 
-Congratulations, you have now created and deployed your first .NET application using Visual Studio Code!
+## Deploying the Application on the Web
+
+Now that we have created our first .NET application, let’s deploy it on the web.
+
+1. Open a terminal or command prompt.
+2. Navigate to the myapp directory.
+
+```bash
+cd /path/to/myapp
+```
+
+3. Run the following command to create a new .NET web application.
+
+```bash
+dotnet new web -o mywebapp
+```
+
+4. Change the directory to mywebapp.
+
+```bash
+cd mywebapp
+```
+
+5. Open the Startup.cs file in your favorite code editor.
+
+```bash
+code Startup.cs
+```
+
+6. Replace the contents of the file with the following code that configures the web application to serve a "Hello, World!" message.
+
+```csharp
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace mywebapp
+{
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello, World!");
+                });
+            });
+        }
+    }
+}
+```
+
+7. Save the file, and close the code editor.
+8. Navigate back to the mywebapp directory and run the following command to build the web application.
+
+```bash
+dotnet build
+```
+
+9. Run the following command to start the web application.
+
+```bash
+dotnet run
+```
+
+Testing the Application
+
+1. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
+2. You should see a "Hello, World!" message displayed on the page.
+
+Congratulations! You have successfully installed .NET, created your first .NET application, and deployed it on the web! This is just the beginning of what you can do with .NET. Start exploring the many features and possibilities of .NET to build powerful and modern applications.
