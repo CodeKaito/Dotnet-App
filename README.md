@@ -143,4 +143,47 @@ Testing the Application
 1. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
 2. You should see a "Hello, World!" message displayed on the page.
 
+## Deploying a .NET Application on Azure with GitHub
+
+This document outlines the process of deploying a .NET application on Azure using GitHub. It is assumed that you have a basic understanding of the Azure platform and have a GitHub repository that contains your .NET application.
+
+### Prerequisites
+
+- An Azure account
+- A resource group created in Azure
+- A GitHub repository containing your .NET application
+- Visual Studio (optional)
+
+### Step 1: Create a Deployment Center
+
+1. Navigate to your Azure portal.
+2. Select your resource group from the left-hand side menu.
+3. Click on the "Add" button at the top of the page.
+4. Search for "Deployment Center" in the search bar and select it.
+5. Click on the "Create" button.
+6. Select "GitHub" as the source control.
+7. Authenticate with your GitHub account and select the repository containing your .NET application.
+8. Click "Save".
+
+### Step 2: Configure Build Options
+
+1. After creating the Deployment Center, click on the "Configure" tab.
+2. Select the build provider that matches your application's version of .NET.
+3. Configure the build options as needed.
+4. Click "Save".
+
+### Step 3: Configure Deployment Options
+
+1. After configuring the build options, click on the "Deployment options" tab.
+2. Select the deployment method that matches your application's architecture.
+3. Configure the deployment options as needed.
+4. Click "Save".
+
+### Step 4: Deploy Your Application
+
+1. After configuring the deployment options, click on the "Overview" tab.
+2. Click "Sync" to begin the deployment process.
+3. Wait for the deployment to complete.
+4. Navigate to your application's URL to verify that it is working correctly.
+
 Congratulations! You have successfully installed .NET, created your first .NET application, and deployed it on the web! This is just the beginning of what you can do with .NET. Start exploring the many features and possibilities of .NET to build powerful and modern applications.
